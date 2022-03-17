@@ -1,0 +1,21 @@
+tags:
+  - users
+summary: getUsers()
+description: Fetch all users
+parameters:
+  - name: accept-language
+    in: header
+    required: false
+    description:
+      $ref: definitions/common.yaml#/definitions/AcceptLanguage/description
+    schema:
+      $ref: definitions/common.yaml#/definitions/AcceptLanguage
+responses:
+  200:
+    description: Returns all users
+    schema:
+      $ref: definitions/users.yaml#/definitions/User
+  500:
+    description: System error
+security:
+  - api_key: []

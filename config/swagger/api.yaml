@@ -1,0 +1,24 @@
+swagger: '2.0'
+info:
+  version: 0.1.0
+  title: myapp
+  description: My cool app
+basePath: /api/v1
+tags:
+  - name: Examples
+    description: Simple example endpoints
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /users/:
+    get:
+      $ref: ./route-get-users.yaml
+    post:
+      $ref: ./route-post-users.yaml
+  '/users/{id}':
+    get:
+      $ref: ./route-get-users-id.yaml
+    put:
+      $ref: ./route-put-users-id.yaml

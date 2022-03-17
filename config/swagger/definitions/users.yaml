@@ -1,0 +1,71 @@
+#####################################################
+#                   DEFINITION                      #
+#####################################################
+definitions:
+  Id:
+    type: integer
+    description: The id of the user
+  Name:
+    type: string
+    description: The name of the user
+  Description:
+    type: string
+    description: The description of the user
+
+#####################################################
+#                   OBJECT                          #
+#####################################################
+  User:
+    type: object
+    title: user
+    required:
+      - id
+      - name
+      - description
+    properties:
+      id:
+        $ref: '#/definitions/Id'
+      name:
+        $ref: '#/definitions/Name'
+      description:
+        $ref: '#/definitions/Description'
+
+  Users:
+    type: array
+    title: users
+    items:
+      $ref: '#/User'
+
+  CreateUser:
+    type: object
+    title: CreateUser
+    description: Expected payload to create a user
+    required:
+      - name
+      - description
+    properties:
+      name:
+        $ref: '#/definitions/Name'
+      description:
+        $ref: '#/definitions/Description'
+
+  CreateUserResult:
+    type: object
+    title: CreateUserResult
+    description: Returned result when a user is create
+    properties:
+      id:
+        $ref: '#/definitions/Id'
+
+  UpdateUser:
+    type: object
+    title: UpdateUser
+    description: Expected payload to update a user
+    required:
+      - name
+      - description
+    properties:
+      name:
+        $ref: '#/definitions/Name'
+      description:
+        $ref: '#/definitions/Description'

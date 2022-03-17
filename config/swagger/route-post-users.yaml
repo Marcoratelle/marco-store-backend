@@ -1,0 +1,28 @@
+tags:
+  - users
+summary: createUser()
+description: Create a new user
+parameters:
+  - name: body
+    in: body
+    required: true
+    description:
+      $ref: definitions/users.yaml#/definitions/CreateUser/description
+    schema:
+      $ref: definitions/users.yaml#/definitions/CreateUser
+  - name: accept-language
+    in: header
+    required: false
+    description:
+      $ref: definitions/common.yaml#/definitions/AcceptLanguage/description
+    schema:
+      $ref: definitions/common.yaml#/definitions/AcceptLanguage
+responses:
+  201:
+    description: Return the id of the created user
+    schema:
+      $ref: definitions/users.yaml#/definitions/CreateUserResult
+  500:
+    description: System error
+security:
+  - api_key: []

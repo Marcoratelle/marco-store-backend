@@ -1,0 +1,5 @@
+security:
+  cors: '*'
+services:
+apikey: 
+  test: 1jh23b3k1jh2b321k2hb31h2j3

@@ -1,0 +1,9 @@
+build
+node_modules
+.env
+.tags*
+coverage
+*.log
+.nyc_output
+reports
+test.db

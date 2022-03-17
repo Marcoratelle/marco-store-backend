@@ -1,0 +1,32 @@
+tags:
+  - users
+summary: getUser()
+description: Return a specific user
+parameters:
+  - name: id
+    in: path
+    required: true
+    description:
+      $ref: definitions/users.yaml#/definitions/Id/description
+    schema:
+      $ref: definitions/users.yaml#/definitions/Id
+  - name: accept-language
+    in: header
+    required: false
+    description:
+      $ref: definitions/common.yaml#/definitions/AcceptLanguage/description
+    schema:
+      $ref: definitions/common.yaml#/definitions/AcceptLanguage
+responses:
+  200:
+    description: Return the user with the specified id
+    schema:
+      $ref: definitions/users.yaml#/definitions/User
+  404:
+    description: User not found
+    schema:
+      $ref: definitions/common.yaml#/definitions/ErrorResponseMessage
+  500:
+    description: System error
+security:
+  - api_key: []
